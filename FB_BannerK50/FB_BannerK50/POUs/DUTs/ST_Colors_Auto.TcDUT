@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <DUT Name="ST_Colors_Auto" Id="{3a21343a-5483-49e6-8b50-b1bec6dee1ff}">
+    <Declaration><![CDATA[TYPE ST_Colors_Auto :
+STRUCT
+	
+	//Green
+	Green_Solid						:	BOOL;
+    GreenSolid_AudibleSolid			:	BOOL;
+	GreenSolid_AudiblePulse			:	BOOL;
+	Green_Flash						:	BOOL;
+    GreenFlash_AudibleSolid			:	BOOL;
+	GreenFlash_AudiblePulse			: 	BOOL;
+	                                        
+	//Red                                   
+    Red_Solid						: 	BOOL;
+	RedSolid_AudibleSolid			:	BOOL;
+	RedSolid_AudiblePulse			:	BOOL;
+    Red_Flash						:	BOOL;
+    RedFlash_AudibleSolid			:	BOOL;
+	RedFlash_AudiblePulse			: 	BOOL;
+	                                        
+	//Orange                                
+	Orange_Solid					:	BOOL;
+	OrangeSolid_AudibleSolid		:	BOOL;
+	OrangeSolid_AudiblePulse		:	BOOL;
+	Orange_Flash					:	BOOL;
+	OrangeFlash_AudibleSolid		:	BOOL;
+	OrangeFlash_AudiblePulse		:	BOOL;
+	                                        
+	//Yellow                                
+    Yellow_Solid					:	BOOL;
+	YellowSolid_AudibleSolid		:	BOOL;
+	YellowSolid_AudiblePulse		:	BOOL;
+    Yellow_Flash					:	BOOL;
+    YellowFlash_AudibleSolid		:	BOOL;
+	YellowFlash_AudiblePulse		:	BOOL;
+	                                        
+	//Lime Green                            
+	LimeGreen_Solid					:	BOOL;
+	LimeGreenSolid_AudibleSolid		:	BOOL;
+	LimeGreenSolid_AudiblePulse		:	BOOL;
+	LimeGreen_Flash					:	BOOL;
+	LimeGreenFlash_AudibleSolid		:	BOOL;
+	LimeGreenFlash_AudiblePulse		:	BOOL;
+	                                        
+	//Spring Green                          
+	SpringGreen_Solid				:	BOOL;
+	SpringGreenSolid_AudibleSolid	:	BOOL;
+	SpringGreenSolid_AudiblePulse	:	BOOL;
+	SpringGreen_Flash				:	BOOL;
+	SpringGreenFlash_AudibleSolid	:	BOOL;
+	SpringGreenFlash_AudiblePulse	:	BOOL;
+	                                        
+	//Cyan                                  
+	Cyan_Solid						:	BOOL;
+	CyanSolid_AudibleSolid			:	BOOL;
+	CyanSolid_AudiblePulse			:	BOOL;
+	Cyan_Flash						:	BOOL;
+	CyanFlash_AudibleSolid			:	BOOL;
+	CyanFlash_AudiblePulse			:	BOOL;
+	                                        
+	//Sky Blue                              
+	SkyBlue_Solid					:	BOOL;
+	SkyBlueSolid_AudibleSolid		:	BOOL;
+	SkyBlueSolid_AudiblePulse		:	BOOL;
+	SkyBlue_Flash					:	BOOL;
+	SkyBlueFlash_AudibleSolid		:	BOOL;
+	SkyBlueFlash_AudiblePulse		:	BOOL;
+	                                        
+	//Blue                                  
+    Blue_Solid						:	BOOL;
+	BlueSolid_AudibleSolid			:	BOOL;
+	BlueSolid_AudiblePulse			:	BOOL;
+    Blue_Flash						:	BOOL;
+    BlueFlash_AudibleSolid			:	BOOL;
+	BlueFlash_AudiblePulse			:	BOOL;
+	                                        
+	//Violet                                
+	Violet_Solid					:	BOOL;
+	VioletSolid_AudibleSolid		:	BOOL;
+	VioletSolid_AudiblePulse		:	BOOL;
+	Violet_Flash					:	BOOL;
+	VioletFlash_AudibleSolid		:	BOOL;
+	VioletFlash_AudiblePulse		:	BOOL;
+	                                        
+	//Magenta                               
+	Magenta_Solid					:	BOOL;
+	MagentaSolid_AudibleSolid		:	BOOL;
+	MagentaSolid_AudiblePulse		:	BOOL;
+	Magenta_Flash					:	BOOL;
+	MagentaFlash_AudibleSolid		:	BOOL;
+	MagentaFlash_AudiblePulse		:	BOOL;
+	                                        
+	//Rose                                  
+	Rose_Solid						:	BOOL;
+	RoseSolid_AudibleSolid			:	BOOL;
+	RoseSolid_AudiblePulse			:	BOOL;
+	Rose_Flash						:	BOOL;
+	RoseFlash_AudibleSolid			:	BOOL;
+	RoseFlash_AudiblePulse			:	BOOL;
+	                                        
+	//White                                 
+	White_Solid						:	BOOL;
+	WhiteSolid_AudibleSolid			:	BOOL;
+	WhiteSolid_AudiblePulse			:	BOOL;
+	White_Flash						:	BOOL;
+	WhiteFlash_AudibleSolid			:	BOOL;
+	WhiteFlash_AudiblePulse			:	BOOL;
+	                                        
+	//Demo Mode                             
+	Demo							:	BOOL;
+	                                        
+	//OFF                                   
+	OFF								:	BOOL;
+
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -3,22 +3,187 @@
   <POU Name="FB_BannerK50" Id="{c8a7360f-87fb-4601-8c93-a54afc321e01}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_BannerK50
 VAR_INPUT
+																										//		https://www.bannerengineering.com/us/en/products/part.802164.html  >>>>------ IO Link Data Reference Guide >>> Found Here
+	AutoMode						:	BOOL := FALSE;
+	ManualMode						:	BOOL := FALSE;
+	
+	SetAllFalse						:	BOOL := FALSE;
+	
+	// Structures
+	Color							:	ST_Colors_Auto;
+	Data							:	ST_ProcessData_Manual;	
+
 END_VAR
 VAR_OUTPUT
+	
+	// IO
+	Banner_Indicator 		AT %Q*  : 	ARRAY[0..3] OF USINT;
+	
 END_VAR
 VAR
+	
+	//Byte 0 - Color 2 Intensity									// Binary Value
+	High_Intensity					:	USINT;						//
+	Medium_Intensity				:	USINT;						//
+	Low_Intensity       			:	USINT;						//
+	
+	//Byte 1 - Color 1 Animation & Intensity
+	Steady_HighInt       			:	USINT	:= 1;				//	0001
+	Flash_HighInt        			:	USINT	:= 2;				//	0010
+	TwoFlash_HighInt        		:	USINT	:= 3;				//	0011
+	Strobe_HighInt        			:	USINT	:= 4;				//	0100
+	Half_HighInt        			:	USINT	:= 5;				//	0101
+	HalfRotate_HighInt      		:	USINT	:= 6;				//	0110
+	Chase_HighInt					:	USINT 	:= 7;				//	0111
+
+	//Byte 2 - Rotation, Audible & Color 2
+																	//
+																	//
+																	//
+																	//
+																	//
+																	//
+																	//
+	
+	//Byte 3 - Color & Flash Rate
+	Red_12Hz						:	USINT := 161;    			// 1010 0001
+																	//
+																	//
+																	//
+																	//
+																	//
+																	//
+																	//
+
+
+
+
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[IF AutoMode THEN
+	_M_SetColorAuto();
+	ManualMode := FALSE;
+ELSE
+	_M_SetColorManual();
+	ManualMode := TRUE;
+END_IF
+
+IF SetAllFalse THEN
+	_M_SetAllFalse();
+END_IF
+SetAllFalse := FALSE;]]></ST>
     </Implementation>
     <Method Name="_M_SetAllFalse" Id="{b314c20f-b371-412b-80a8-2cbbf3b2e127}">
-      <Declaration><![CDATA[METHOD _M_SetAllFalse : BOOL
+      <Declaration><![CDATA[METHOD PUBLIC _M_SetAllFalse : BOOL
 VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[//Green
+Color.Green_Solid							:= FALSE;
+Color.GreenSolid_AudibleSolid				:= FALSE;
+Color.GreenSolid_AudiblePulse				:= FALSE;
+Color.Green_Flash							:= FALSE;
+Color.GreenFlash_AudibleSolid				:= FALSE;
+Color.GreenFlash_AudiblePulse				:= FALSE;
+                                	
+//Red                           	
+Color.Red_Solid								:= FALSE;
+Color.RedSolid_AudibleSolid					:= FALSE;
+Color.RedSolid_AudiblePulse					:= FALSE;
+Color.Red_Flash								:= FALSE;
+Color.RedFlash_AudibleSolid					:= FALSE;
+Color.RedFlash_AudiblePulse					:= FALSE;
+                                	
+//Orange                        	
+Color.Orange_Solid							:= FALSE;
+Color.OrangeSolid_AudibleSolid				:= FALSE;
+Color.OrangeSolid_AudiblePulse				:= FALSE;
+Color.Orange_Flash							:= FALSE;
+Color.OrangeFlash_AudibleSolid				:= FALSE;
+Color.OrangeFlash_AudiblePulse				:= FALSE;
+                                	
+//Yellow                        	
+Color.Yellow_Solid							:= FALSE;
+Color.YellowSolid_AudibleSolid				:= FALSE;
+Color.YellowSolid_AudiblePulse				:= FALSE;
+Color.Yellow_Flash							:= FALSE;
+Color.YellowFlash_AudibleSolid				:= FALSE;
+Color.YellowFlash_AudiblePulse				:= FALSE;
+                                	
+//Lime Green                    	
+Color.LimeGreen_Solid						:= FALSE;
+Color.LimeGreenSolid_AudibleSolid			:= FALSE;
+Color.LimeGreenSolid_AudiblePulse			:= FALSE;
+Color.LimeGreen_Flash						:= FALSE;
+Color.LimeGreenFlash_AudibleSolid			:= FALSE;
+Color.LimeGreenFlash_AudiblePulse			:= FALSE;
+                                	
+//Spring Green                  	
+Color.SpringGreen_Solid						:= FALSE;
+Color.SpringGreenSolid_AudibleSolid			:= FALSE;
+Color.SpringGreenSolid_AudiblePulse			:= FALSE;
+Color.SpringGreen_Flash						:= FALSE;
+Color.SpringGreenFlash_AudibleSolid			:= FALSE;
+Color.SpringGreenFlash_AudiblePulse			:= FALSE;
+                                	
+//Cyan                          	
+Color.Cyan_Solid							:= FALSE;
+Color.CyanSolid_AudibleSolid				:= FALSE;
+Color.CyanSolid_AudiblePulse				:= FALSE;
+Color.Cyan_Flash							:= FALSE;
+Color.CyanFlash_AudibleSolid				:= FALSE;
+Color.CyanFlash_AudiblePulse				:= FALSE;
+                                	
+//Sky Blue                      	
+Color.SkyBlue_Solid							:= FALSE;
+Color.SkyBlueSolid_AudibleSolid				:= FALSE;
+Color.SkyBlueSolid_AudiblePulse				:= FALSE;
+Color.SkyBlue_Flash							:= FALSE;
+Color.SkyBlueFlash_AudibleSolid				:= FALSE;
+Color.SkyBlueFlash_AudiblePulse				:= FALSE;
+                                	
+//Blue                          	
+Color.Blue_Solid							:= FALSE;
+Color.BlueSolid_AudibleSolid				:= FALSE;
+Color.BlueSolid_AudiblePulse				:= FALSE;
+Color.Blue_Flash							:= FALSE;
+Color.BlueFlash_AudibleSolid				:= FALSE;
+Color.BlueFlash_AudiblePulse				:= FALSE;
+                                	
+//Violet                        	
+Color.Violet_Solid							:= FALSE;
+Color.VioletSolid_AudibleSolid				:= FALSE;
+Color.VioletSolid_AudiblePulse				:= FALSE;
+Color.Violet_Flash							:= FALSE;
+Color.VioletFlash_AudibleSolid				:= FALSE;
+Color.VioletFlash_AudiblePulse				:= FALSE;
+                                	
+//Magenta                       	
+Color.Magenta_Solid							:= FALSE;
+Color.MagentaSolid_AudibleSolid				:= FALSE;
+Color.MagentaSolid_AudiblePulse				:= FALSE;
+Color.Magenta_Flash							:= FALSE;
+Color.MagentaFlash_AudibleSolid				:= FALSE;
+Color.MagentaFlash_AudiblePulse				:= FALSE;
+                                	
+//Rose                          	
+Color.Rose_Solid							:= FALSE;
+Color.RoseSolid_AudibleSolid				:= FALSE;
+Color.RoseSolid_AudiblePulse				:= FALSE;
+Color.Rose_Flash							:= FALSE;
+Color.RoseFlash_AudibleSolid				:= FALSE;
+Color.RoseFlash_AudiblePulse				:= FALSE;
+                                	
+//White                         	
+Color.WhiteFlash_AudiblePulse				:= FALSE;
+                                	
+//Demo Mode                     	
+Color.Demo									:= FALSE;
+                                	
+//OFF                           	
+Color.OFF									:= FALSE;]]></ST>
       </Implementation>
     </Method>
     <Method Name="_M_SetColorAuto" Id="{468aabe7-0c3d-482d-8e67-cc75bb43dcf1}">
@@ -27,7 +192,517 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[IF Automode AND NOT ManualMode THEN	
+	IF Color.Green_Solid THEN
+			Banner_Indicator[0] := 0;
+			Banner_Indicator[1] := 1;
+			Banner_Indicator[2] := 0;
+			Banner_Indicator[3] := 0;
+		
+		 ELSIF Color.GreenSolid_AudibleSolid THEN
+			Banner_Indicator[0] := 0;
+		    Banner_Indicator[1] := 1;
+		    Banner_Indicator[2] := 0;
+		    Banner_Indicator[3] := 0;
+			
+		ELSIF Color.GreenSolid_AudiblePulse THEN	
+			Banner_Indicator[0] := 0;	
+		   	Banner_Indicator[1] := 1;	
+		   	Banner_Indicator[2] := 0;	
+		   	Banner_Indicator[3] := 0;	
+			
+		ELSIF Color.Green_Flash THEN
+			Banner_Indicator[0] := 0;
+		    Banner_Indicator[1] := 1;
+		    Banner_Indicator[2] := 0;
+		    Banner_Indicator[3] := 0;
+			
+		ELSIF Color.GreenFlash_AudibleSolid THEN
+			Banner_Indicator[0] := 0;
+		    Banner_Indicator[1] := 1;
+		    Banner_Indicator[2] := 0;
+		    Banner_Indicator[3] := 0;
+			
+		ELSIF Color.GreenFlash_AudiblePulse THEN	
+			Banner_Indicator[0] := 0;	
+		    Banner_Indicator[1] := 1;	
+		    Banner_Indicator[2] := 0;	
+		    Banner_Indicator[3] := 0;	
+			
+		//Red Variations ---------------------------------------------------------------
+		
+		ELSIF Color.Red_Solid THEN
+			Banner_Indicator[0] := 0;
+			Banner_Indicator[1] := 1;
+			Banner_Indicator[2] := 0;
+			Banner_Indicator[3] := 0;
+		
+		ELSIF Color.RedSolid_AudibleSolid THEN
+			Banner_Indicator[0] := 0;
+		    Banner_Indicator[1] := 1;
+		    Banner_Indicator[2] := 0;
+		    Banner_Indicator[3] := 0;
+		
+		ELSIF Color.RedSolid_AudiblePulse THEN	
+			Banner_Indicator[0] := 0;	
+		    Banner_Indicator[1] := 1;	
+		    Banner_Indicator[2] := 0;	
+		    Banner_Indicator[3] := 0;	
+			
+		ELSIF Color.Red_Flash THEN
+			Banner_Indicator[0] := 0;
+		    Banner_Indicator[1] := 1;
+		    Banner_Indicator[2] := 0;
+		    Banner_Indicator[3] := 0;
+	
+		ELSIF Color.RedFlash_AudibleSolid THEN
+			Banner_Indicator[0] := 0;
+		    Banner_Indicator[1] := 1;
+		    Banner_Indicator[2] := 0;
+		    Banner_Indicator[3] := 0;
+		
+		ELSIF Color.RedFlash_AudiblePulse THEN	
+			Banner_Indicator[0] := 0;	
+		    Banner_Indicator[1] := 1;	
+		    Banner_Indicator[2] := 0;	
+		    Banner_Indicator[3] := 0;	
+			
+		//Orange Variations -------------------------------------------------------------	
+			
+		ELSIF Color.Orange_Solid THEN
+			Banner_Indicator[0] := 0;
+			Banner_Indicator[1] := 1;
+			Banner_Indicator[2] := 0;
+			Banner_Indicator[3] := 0;
+		
+		ELSIF Color.OrangeSolid_AudibleSolid THEN	
+			Banner_Indicator[0] := 0;
+		    Banner_Indicator[1] := 1;
+		    Banner_Indicator[2] := 0;
+		    Banner_Indicator[3] := 0;
+		
+		ELSIF Color.OrangeSolid_AudiblePulse THEN
+			Banner_Indicator[0] := 0;	
+		    Banner_Indicator[1] := 1;	
+		    Banner_Indicator[2] := 0;	
+		    Banner_Indicator[3] := 0;	
+			
+		ELSIF Color.Orange_Flash THEN	
+			Banner_Indicator[0] := 0;
+		    Banner_Indicator[1] := 1;
+		    Banner_Indicator[2] := 0;
+		    Banner_Indicator[3] := 0;
+		
+		ELSIF Color.OrangeFlash_AudibleSolid THEN
+			Banner_Indicator[0] := 0;
+		    Banner_Indicator[1] := 1;
+		    Banner_Indicator[2] := 0;
+		    Banner_Indicator[3] := 0;
+			
+		ELSIF Color.OrangeFlash_AudiblePulse THEN
+			Banner_Indicator[0] := 0;	
+		    Banner_Indicator[1] := 1;	
+		    Banner_Indicator[2] := 0;	
+		    Banner_Indicator[3] := 0;	
+
+		//Yellow Variations -------------------------------------------------------------
+		
+		ELSIF Color.Yellow_Solid THEN            
+			Banner_Indicator[0] := 0;               
+			Banner_Indicator[1] := 1;               
+			Banner_Indicator[2] := 0;               
+			Banner_Indicator[3] := 0;               
+	                                             
+		ELSIF Color.YellowSolid_AudibleSolid THEN
+			Banner_Indicator[0] := 0;               
+		    Banner_Indicator[1] := 1;            
+		    Banner_Indicator[2] := 0;            
+		    Banner_Indicator[3] := 0;            
+		                                         
+		ELSIF Color.YellowSolid_AudiblePulse THEN
+			Banner_Indicator[0] := 0;	              
+		    Banner_Indicator[1] := 1;	           
+		    Banner_Indicator[2] := 0;	           
+		    Banner_Indicator[3] := 0;	           
+			                                        
+		ELSIF Color.Yellow_Flash THEN	           
+			Banner_Indicator[0] := 0;               
+		    Banner_Indicator[1] := 1;            
+		    Banner_Indicator[2] := 0;            
+		    Banner_Indicator[3] := 0;            
+		                                         
+		ELSIF Color.YellowFlash_AudibleSolid THEN
+			Banner_Indicator[0] := 0;               
+		    Banner_Indicator[1] := 1;            
+		    Banner_Indicator[2] := 0;            
+		    Banner_Indicator[3] := 0;            
+			                                        
+		ELSIF Color.YellowFlash_AudiblePulse THEN
+			Banner_Indicator[0] := 0;	              
+		    Banner_Indicator[1] := 1;	           
+		    Banner_Indicator[2] := 0;	           
+		    Banner_Indicator[3] := 0;	           
+
+		//Lime Green Variations -------------------------------------------------------------
+			
+		ELSIF Color.LimeGreen_Solid THEN            	
+			Banner_Indicator[0] := 0;               	
+			Banner_Indicator[1] := 1;               	
+			Banner_Indicator[2] := 0;               	
+			Banner_Indicator[3] := 0;               	
+		                                         	
+		ELSIF Color.LimeGreenSolid_AudibleSolid THEN	
+			Banner_Indicator[0] := 0;               	
+		    Banner_Indicator[1] := 1;            	
+		    Banner_Indicator[2] := 0;            	
+		    Banner_Indicator[3] := 0;            	
+		                                         	
+		ELSIF Color.LimeGreenSolid_AudiblePulse THEN	
+			Banner_Indicator[0] := 0;	              	
+		    Banner_Indicator[1] := 1;	           	
+		    Banner_Indicator[2] := 0;	           	
+		    Banner_Indicator[3] := 0;	           	
+			                                        	
+		ELSIF Color.LimeGreen_Flash THEN	           	
+			Banner_Indicator[0] := 0;               	
+		    Banner_Indicator[1] := 1;            	
+		    Banner_Indicator[2] := 0;            	
+		    Banner_Indicator[3] := 0;            	
+		                                         	
+		ELSIF Color.LimeGreenFlash_AudibleSolid THEN	
+			Banner_Indicator[0] := 0;               	
+		    Banner_Indicator[1] := 1;            	
+		    Banner_Indicator[2] := 0;            	
+		    Banner_Indicator[3] := 0;            	
+			                                        	
+		ELSIF Color.LimeGreenFlash_AudiblePulse THEN	
+			Banner_Indicator[0] := 0;	              	
+		    Banner_Indicator[1] := 1;	           	
+		    Banner_Indicator[2] := 0;	           	
+		    Banner_Indicator[3] := 0;	           	
+			
+		//Spring Green Variations -------------------------------------------------------------	
+			
+		ELSIF Color.SpringGreen_Solid THEN            	
+			Banner_Indicator[0] := 0;               	
+			Banner_Indicator[1] := 1;               	
+			Banner_Indicator[2] := 0;               	
+			Banner_Indicator[3] := 0;               	
+		                                         	
+		ELSIF Color.SpringGreenSolid_AudibleSolid THEN	
+			Banner_Indicator[0] := 0;               	
+		    Banner_Indicator[1] := 1;            	
+		    Banner_Indicator[2] := 0;            	
+		    Banner_Indicator[3] := 0;            	
+		                                         	
+		ELSIF Color.SpringGreenSolid_AudiblePulse THEN	
+			Banner_Indicator[0] := 0;	              	
+		    Banner_Indicator[1] := 1;	           	
+		    Banner_Indicator[2] := 0;	           	
+		    Banner_Indicator[3] := 0;	           	
+			                                        	
+		ELSIF Color.SpringGreen_Flash THEN	           	
+			Banner_Indicator[0] := 0;               	
+		    Banner_Indicator[1] := 1;            	
+		    Banner_Indicator[2] := 0;            	
+		    Banner_Indicator[3] := 0;            	
+		                                         	
+		ELSIF Color.SpringGreenFlash_AudibleSolid THEN	
+			Banner_Indicator[0] := 0;               	
+		    Banner_Indicator[1] := 1;            	
+		    Banner_Indicator[2] := 0;            	
+		    Banner_Indicator[3] := 0;            	
+			                                        	
+		ELSIF Color.SpringGreenFlash_AudiblePulse THEN	
+			Banner_Indicator[0] := 0;	              	
+		    Banner_Indicator[1] := 1;	           	
+		    Banner_Indicator[2] := 0;	           	
+		    Banner_Indicator[3] := 0;	           	
+			
+		//Cyan Variations -------------------------------------------------------------
+        
+        ELSIF Color.Cyan_Solid THEN            
+        	Banner_Indicator[0] := 0;               
+        	Banner_Indicator[1] := 1;               
+        	Banner_Indicator[2] := 0;               
+        	Banner_Indicator[3] := 0;               
+                                                 
+        ELSIF Color.CyanSolid_AudibleSolid THEN
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+                                                 
+        ELSIF Color.CyanSolid_AudiblePulse THEN
+        	Banner_Indicator[0] := 0;	              
+            Banner_Indicator[1] := 1;	           
+            Banner_Indicator[2] := 0;	           
+            Banner_Indicator[3] := 0;	           
+        	                                        
+        ELSIF Color.Cyan_Flash THEN	           
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+                                                 
+        ELSIF Color.CyanFlash_AudibleSolid THEN
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+        	                                        
+        ELSIF Color.CyanFlash_AudiblePulse THEN
+        	Banner_Indicator[0] := 0;	              
+            Banner_Indicator[1] := 1;	           
+            Banner_Indicator[2] := 0;	           
+            Banner_Indicator[3] := 0;	           
+
+		//Sky Blue Variations -------------------------------------------------------------
+        
+        ELSIF Color.SkyBlue_Solid THEN            
+        	Banner_Indicator[0] := 0;               
+        	Banner_Indicator[1] := 1;               
+        	Banner_Indicator[2] := 0;               
+        	Banner_Indicator[3] := 0;               
+                                                 
+        ELSIF Color.SkyBlueSolid_AudibleSolid THEN
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+                                                 
+        ELSIF Color.SkyBlueSolid_AudiblePulse THEN
+        	Banner_Indicator[0] := 0;	              
+            Banner_Indicator[1] := 1;	           
+            Banner_Indicator[2] := 0;	           
+            Banner_Indicator[3] := 0;	           
+        	                                        
+        ELSIF Color.SkyBlue_Flash THEN	           
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+                                                 
+        ELSIF Color.SkyBlueFlash_AudibleSolid THEN
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+        	                                        
+        ELSIF Color.SkyBlueFlash_AudiblePulse THEN
+        	Banner_Indicator[0] := 0;	              
+            Banner_Indicator[1] := 1;	           
+            Banner_Indicator[2] := 0;	           
+            Banner_Indicator[3] := 0;	           
+
+		//Blue Variations -------------------------------------------------------------
+        
+        ELSIF Color.Blue_Solid THEN            
+        	Banner_Indicator[0] := 0;               
+        	Banner_Indicator[1] := 1;               
+        	Banner_Indicator[2] := 0;               
+        	Banner_Indicator[3] := 0;               
+                                                 
+        ELSIF Color.BlueSolid_AudibleSolid THEN
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+                                                 
+        ELSIF Color.BlueSolid_AudiblePulse THEN
+        	Banner_Indicator[0] := 0;	              
+            Banner_Indicator[1] := 1;	           
+            Banner_Indicator[2] := 0;	           
+            Banner_Indicator[3] := 0;	           
+        	                                        
+        ELSIF Color.Blue_Flash THEN	           
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+                                                 
+        ELSIF Color.BlueFlash_AudibleSolid THEN
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+        	                                        
+        ELSIF Color.BlueFlash_AudiblePulse THEN
+        	Banner_Indicator[0] := 0;	              
+            Banner_Indicator[1] := 1;	           
+            Banner_Indicator[2] := 0;	           
+            Banner_Indicator[3] := 0;	           
+
+		//Violet Variations -------------------------------------------------------------
+        
+        ELSIF Color.Violet_Solid THEN            
+        	Banner_Indicator[0] := 0;               
+        	Banner_Indicator[1] := 1;               
+        	Banner_Indicator[2] := 0;               
+        	Banner_Indicator[3] := 0;               
+                                                 
+        ELSIF Color.VioletSolid_AudibleSolid THEN
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+                                                 
+        ELSIF Color.VioletSolid_AudiblePulse THEN
+        	Banner_Indicator[0] := 0;	              
+            Banner_Indicator[1] := 1;	           
+            Banner_Indicator[2] := 0;	           
+            Banner_Indicator[3] := 0;	           
+        	                                        
+        ELSIF Color.Violet_Flash THEN	           
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+                                                 
+        ELSIF Color.VioletFlash_AudibleSolid THEN
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+        	                                        
+        ELSIF Color.VioletFlash_AudiblePulse THEN
+        	Banner_Indicator[0] := 0;	              
+            Banner_Indicator[1] := 1;	           
+            Banner_Indicator[2] := 0;	           
+            Banner_Indicator[3] := 0;	           
+
+		//Magenta Variations -------------------------------------------------------------
+        
+        ELSIF Color.Magenta_Solid THEN            
+        	Banner_Indicator[0] := 0;               
+        	Banner_Indicator[1] := 1;               
+        	Banner_Indicator[2] := 0;               
+        	Banner_Indicator[3] := 0;               
+                                                 
+        ELSIF Color.MagentaSolid_AudibleSolid THEN
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+	                                             
+		ELSIF Color.MagentaSolid_AudiblePulse THEN	
+			Banner_Indicator[0] := 0;	              	
+		    Banner_Indicator[1] := 1;	           	
+		    Banner_Indicator[2] := 0;	           	
+		    Banner_Indicator[3] := 0;	           	
+			                                        	
+		ELSIF Color.Magenta_Flash THEN	           	
+			Banner_Indicator[0] := 0;               	
+		    Banner_Indicator[1] := 1;            	
+		    Banner_Indicator[2] := 0;            	
+		    Banner_Indicator[3] := 0;            
+                                                 
+        ELSIF Color.MagentaFlash_AudibleSolid THEN
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+        	                                        
+        ELSIF Color.MagentaFlash_AudiblePulse THEN
+        	Banner_Indicator[0] := 0;	              
+            Banner_Indicator[1] := 1;	           
+            Banner_Indicator[2] := 0;	           
+            Banner_Indicator[3] := 0;	           
+
+		//Rose Variations -------------------------------------------------------------
+        
+        ELSIF Color.Rose_Solid THEN            
+        	Banner_Indicator[0] := 0;               
+        	Banner_Indicator[1] := 1;               
+        	Banner_Indicator[2] := 0;               
+        	Banner_Indicator[3] := 0;               
+                                                 
+        ELSIF Color.RoseSolid_AudibleSolid THEN
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+                                                 
+        ELSIF Color.RoseSolid_AudiblePulse THEN
+        	Banner_Indicator[0] := 0;	              
+            Banner_Indicator[1] := 1;	           
+            Banner_Indicator[2] := 0;	           
+            Banner_Indicator[3] := 0;	           
+        	                                        
+        ELSIF Color.Rose_Flash THEN	           
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+                                                 
+        ELSIF Color.RoseFlash_AudibleSolid THEN
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+        	                                        
+        ELSIF Color.RoseFlash_AudiblePulse THEN
+        	Banner_Indicator[0] := 0;	              
+            Banner_Indicator[1] := 1;	           
+            Banner_Indicator[2] := 0;	           
+            Banner_Indicator[3] := 0;	           
+
+		//White Variations -------------------------------------------------------------
+        
+        ELSIF Color.White_Solid THEN            
+        	Banner_Indicator[0] := 0;               
+        	Banner_Indicator[1] := 1;               
+        	Banner_Indicator[2] := 0;               
+        	Banner_Indicator[3] := 0;               
+                                                 
+        ELSIF Color.WhiteSolid_AudibleSolid THEN
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+                                                 
+        ELSIF Color.WhiteSolid_AudiblePulse THEN
+        	Banner_Indicator[0] := 0;	              
+            Banner_Indicator[1] := 1;	           
+            Banner_Indicator[2] := 0;	           
+            Banner_Indicator[3] := 0;	           
+        	                                        
+        ELSIF Color.White_Flash THEN	           
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+                                                 
+        ELSIF Color.WhiteFlash_AudibleSolid THEN
+        	Banner_Indicator[0] := 0;               
+            Banner_Indicator[1] := 1;            
+            Banner_Indicator[2] := 0;            
+            Banner_Indicator[3] := 0;            
+        	                                        
+        ELSIF Color.WhiteFlash_AudiblePulse THEN
+        	Banner_Indicator[0] := 0;	              
+            Banner_Indicator[1] := 1;	           
+            Banner_Indicator[2] := 0;	           
+            Banner_Indicator[3] := 0;	           
+
+		//Demo Variations -------------------------------------------------------------
+        
+        ELSIF Color.Demo THEN            
+        	Banner_Indicator[0] := 0;               
+        	Banner_Indicator[1] := 1;               
+        	Banner_Indicator[2] := 0;               
+        	Banner_Indicator[3] := 0;               
+        
+		//OFF
+                                         
+		ELSIF Color.OFF THEN           
+			Banner_Indicator[0] := 0;   	
+			Banner_Indicator[1] := 1;   	
+			Banner_Indicator[2] := 0;   	
+			Banner_Indicator[3] := 0;   	
+			
+	END_IF
+END_IF]]></ST>
       </Implementation>
     </Method>
     <Method Name="_M_SetColorManual" Id="{a23d6c4b-5dcd-43e6-9792-2dff63939530}">
@@ -36,19 +711,60 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[IF ManualMode AND NOT AutoMode THEN
+	 Banner_Indicator[0]:= Data.Octet_0;
+	 Banner_Indicator[1]:= Data.Octet_1;
+	 Banner_Indicator[2]:= Data.Octet_2;
+	 Banner_Indicator[3]:= Data.Octet_3;
+END_IF]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="FB_BannerK50">
       <LineId Id="9" Count="0" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="72" Count="1" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="84" Count="0" />
+      <LineId Id="83" Count="0" />
+      <LineId Id="85" Count="2" />
     </LineIds>
     <LineIds Name="FB_BannerK50._M_SetAllFalse">
       <LineId Id="5" Count="0" />
+      <LineId Id="9" Count="95" />
+      <LineId Id="110" Count="5" />
+      <LineId Id="120" Count="0" />
     </LineIds>
     <LineIds Name="FB_BannerK50._M_SetColorAuto">
+      <LineId Id="9" Count="11" />
+      <LineId Id="119" Count="6" />
+      <LineId Id="22" Count="10" />
+      <LineId Id="126" Count="0" />
+      <LineId Id="128" Count="5" />
+      <LineId Id="34" Count="13" />
+      <LineId Id="134" Count="4" />
+      <LineId Id="142" Count="0" />
+      <LineId Id="48" Count="11" />
+      <LineId Id="143" Count="42" />
+      <LineId Id="194" Count="0" />
+      <LineId Id="60" Count="25" />
+      <LineId Id="195" Count="10" />
+      <LineId Id="209" Count="1" />
+      <LineId Id="116" Count="0" />
+      <LineId Id="211" Count="74" />
+      <LineId Id="306" Count="163" />
+      <LineId Id="305" Count="0" />
+      <LineId Id="286" Count="10" />
+      <LineId Id="471" Count="96" />
+      <LineId Id="569" Count="0" />
+      <LineId Id="568" Count="0" />
+      <LineId Id="299" Count="5" />
       <LineId Id="5" Count="0" />
+      <LineId Id="118" Count="0" />
     </LineIds>
     <LineIds Name="FB_BannerK50._M_SetColorManual">
+      <LineId Id="9" Count="4" />
       <LineId Id="5" Count="0" />
     </LineIds>
   </POU>

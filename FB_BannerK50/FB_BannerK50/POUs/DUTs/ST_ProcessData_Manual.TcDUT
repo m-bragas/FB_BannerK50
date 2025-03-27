@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <DUT Name="ST_ProcessData_Manual" Id="{6dabda40-b35c-411a-af1c-16b8f106a464}">
+    <Declaration><![CDATA[TYPE ST_ProcessData_Manual :
+STRUCT
+	// Set Raw Custom Value	
+	Octet_0							:	USINT := 0;
+	Octet_1							:	USINT := 0;
+	Octet_2							:	USINT := 0;	
+	Octet_3							:	USINT := 0;
+
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
