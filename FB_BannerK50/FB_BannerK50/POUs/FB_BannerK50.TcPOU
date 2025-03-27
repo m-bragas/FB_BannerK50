@@ -74,8 +74,9 @@ IF SetAllFalse THEN
 END_IF
 SetAllFalse := FALSE;]]></ST>
     </Implementation>
-    <Method Name="_M_SetAllFalse" Id="{b314c20f-b371-412b-80a8-2cbbf3b2e127}">
-      <Declaration><![CDATA[METHOD PUBLIC _M_SetAllFalse : BOOL
+    <Folder Name="Private" Id="{894cd17b-5730-4e15-bf93-01bdb1b8a4ad}" />
+    <Method Name="_M_SetAllFalse" Id="{b314c20f-b371-412b-80a8-2cbbf3b2e127}" FolderPath="Private\">
+      <Declaration><![CDATA[METHOD PRIVATE _M_SetAllFalse : BOOL
 VAR_INPUT
 END_VAR
 ]]></Declaration>
@@ -186,8 +187,8 @@ Color.Demo									:= FALSE;
 Color.OFF									:= FALSE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="_M_SetColorAuto" Id="{468aabe7-0c3d-482d-8e67-cc75bb43dcf1}">
-      <Declaration><![CDATA[METHOD _M_SetColorAuto : BOOL
+    <Method Name="_M_SetColorAuto" Id="{468aabe7-0c3d-482d-8e67-cc75bb43dcf1}" FolderPath="Private\">
+      <Declaration><![CDATA[METHOD PRIVATE _M_SetColorAuto : BOOL
 VAR_INPUT
 END_VAR
 ]]></Declaration>
@@ -705,8 +706,8 @@ END_VAR
 END_IF]]></ST>
       </Implementation>
     </Method>
-    <Method Name="_M_SetColorManual" Id="{a23d6c4b-5dcd-43e6-9792-2dff63939530}">
-      <Declaration><![CDATA[METHOD _M_SetColorManual : BOOL
+    <Method Name="_M_SetColorManual" Id="{a23d6c4b-5dcd-43e6-9792-2dff63939530}" FolderPath="Private\">
+      <Declaration><![CDATA[METHOD PRIVATE _M_SetColorManual : BOOL
 VAR_INPUT
 END_VAR
 ]]></Declaration>
