@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="FB_BannerK50" Id="{c8a7360f-87fb-4601-8c93-a54afc321e01}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_BannerK50
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="_M_SetAllFalse" Id="{b314c20f-b371-412b-80a8-2cbbf3b2e127}">
+      <Declaration><![CDATA[METHOD _M_SetAllFalse : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="_M_SetColorAuto" Id="{468aabe7-0c3d-482d-8e67-cc75bb43dcf1}">
+      <Declaration><![CDATA[METHOD _M_SetColorAuto : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="_M_SetColorManual" Id="{a23d6c4b-5dcd-43e6-9792-2dff63939530}">
+      <Declaration><![CDATA[METHOD _M_SetColorManual : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_BannerK50">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BannerK50._M_SetAllFalse">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BannerK50._M_SetColorAuto">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BannerK50._M_SetColorManual">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
