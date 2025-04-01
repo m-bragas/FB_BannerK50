@@ -67,12 +67,14 @@ END_VAR
 ELSE
 	_M_SetColorManual();
 	ManualMode := TRUE;
+	AutoMode   := FALSE;
 END_IF
 
 IF SetAllFalse THEN
 	_M_SetAllFalse();
+	SetAllFalse := FALSE;
 END_IF
-SetAllFalse := FALSE;]]></ST>
+]]></ST>
     </Implementation>
     <Folder Name="Private" Id="{894cd17b-5730-4e15-bf93-01bdb1b8a4ad}" />
     <Method Name="_M_SetAllFalse" Id="{b314c20f-b371-412b-80a8-2cbbf3b2e127}" FolderPath="Private\">
@@ -726,10 +728,13 @@ END_IF]]></ST>
       <LineId Id="74" Count="0" />
       <LineId Id="72" Count="1" />
       <LineId Id="75" Count="0" />
+      <LineId Id="146" Count="0" />
       <LineId Id="71" Count="0" />
       <LineId Id="84" Count="0" />
       <LineId Id="83" Count="0" />
-      <LineId Id="85" Count="2" />
+      <LineId Id="85" Count="0" />
+      <LineId Id="147" Count="0" />
+      <LineId Id="86" Count="1" />
     </LineIds>
     <LineIds Name="FB_BannerK50._M_SetAllFalse">
       <LineId Id="5" Count="0" />
