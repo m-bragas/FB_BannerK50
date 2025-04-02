@@ -292,13 +292,13 @@ END_VAR
 		 ELSIF Color.GreenSolid_AudibleSolid THEN
 			Banner_Indicator[0] := 0;
 		    Banner_Indicator[1] := 1;
-		    Banner_Indicator[2] := 0;
+		    Banner_Indicator[2] := 32;
 		    Banner_Indicator[3] := 0;
 			
 		ELSIF Color.GreenSolid_AudiblePulse THEN	
 			Banner_Indicator[0] := 0;	
 		   	Banner_Indicator[1] := 1;	
-		   	Banner_Indicator[2] := 0;	
+		   	Banner_Indicator[2] := 64;	
 		   	Banner_Indicator[3] := 0;	
 			
 		ELSIF Color.Green_Flash THEN
@@ -309,14 +309,14 @@ END_VAR
 			
 		ELSIF Color.GreenFlash_AudibleSolid THEN
 			Banner_Indicator[0] := 0;
-		    Banner_Indicator[1] := 1;
-		    Banner_Indicator[2] := 0;
+		    Banner_Indicator[1] := 2;
+		    Banner_Indicator[2] := 32;
 		    Banner_Indicator[3] := 0;
 			
 		ELSIF Color.GreenFlash_AudiblePulse THEN	
 			Banner_Indicator[0] := 0;	
-		    Banner_Indicator[1] := 1;	
-		    Banner_Indicator[2] := 0;	
+		    Banner_Indicator[1] := 2;	
+		    Banner_Indicator[2] := 64;	
 		    Banner_Indicator[3] := 0;	
 			
 		//Red Variations ---------------------------------------------------------------
@@ -790,7 +790,12 @@ END_VAR
 			Banner_Indicator[1] := 1;   	
 			Banner_Indicator[2] := 0;   	
 			Banner_Indicator[3] := 0;   	
-			
+	ELSE
+		Banner_Indicator[0] := 0;
+        Banner_Indicator[1] := 0;
+        Banner_Indicator[2] := 0;
+        Banner_Indicator[3] := 0;
+		_M_SetAllFalse();
 	END_IF
 END_IF]]></ST>
       </Implementation>
@@ -853,6 +858,8 @@ END_IF]]></ST>
       <LineId Id="569" Count="0" />
       <LineId Id="568" Count="0" />
       <LineId Id="299" Count="5" />
+      <LineId Id="574" Count="0" />
+      <LineId Id="576" Count="3" />
       <LineId Id="5" Count="0" />
       <LineId Id="118" Count="0" />
     </LineIds>
