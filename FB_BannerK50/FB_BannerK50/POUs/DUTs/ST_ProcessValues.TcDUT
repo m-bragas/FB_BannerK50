@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <DUT Name="ST_ProcessValues" Id="{7816eeab-3648-4e3a-a516-ead8bf79a2a7}">
+    <Declaration><![CDATA[TYPE ST_ProcessValues :
+STRUCT
+	//Byte 0 - Color 2 Intensity									// Binary Value
+    High_Intensity					:	USINT	:= 0;				// 0000
+    Medium_Intensity				:	USINT	:= 2;				// 0010
+    Low_Intensity       			:	USINT	:= 1;				// 0001
+    OFF_Intensity					:	USINT	:= 4;				// 0100
+    
+    //Byte 1 - Color 1 Animation & Intensity
+    Steady_HighInt       			:	USINT	:= 1;				//	0001
+    Flash_HighInt        			:	USINT	:= 2;				//	0010
+    TwoFlash_HighInt        		:	USINT	:= 3;				//	0011
+    Strobe_HighInt        			:	USINT	:= 4;				//	0100
+    Half_HighInt        			:	USINT	:= 5;				//	0101
+    HalfRotate_HighInt      		:	USINT	:= 6;				//	0110
+    Chase_HighInt					:	USINT 	:= 7;				//	0111
+    
+    //Byte 2 - Rotation, Audible & Color 2
+	AudibleOFF						:	USINT	:= 0;				//  0000
+    AudibleSolid					: 	USINT	:= 32;				//	0010 0000
+    AudiblePulse					: 	USINT	:= 64;				//	0100 0000
+    
+    //Byte 3 - Color & Flash Rate
+    Green							:	USINT 	:= 0;				//  0
+    Red								:	USINT 	:= 1;				//  0001	
+    Orange							:	USINT 	:= 2;				//	0010
+    Yellow							:	USINT 	:= 3;				//	0011
+    Lime_Green						:	USINT 	:= 4;				//	0100
+    Spring_Green					:	USINT 	:= 5;				//	0101
+    Cyan							:	USINT 	:= 6;				//	0110
+    SkyBlue							:	USINT 	:= 7;				//	0111
+    Blue							:	USINT 	:= 8;				//	1111
+    Violet							:	USINT 	:= 9;				//	1001
+    Magenta							:	USINT 	:= 10;              //	1010
+    Rose							:	USINT 	:= 11;              //	1011
+    White							:	USINT 	:= 12;              //	1100
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

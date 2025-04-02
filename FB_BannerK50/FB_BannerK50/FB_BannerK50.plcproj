@@ -26,6 +26,9 @@
     <Compile Include="POUs\DUTs\ST_ProcessData_Manual.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\DUTs\ST_ProcessValues.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\FB_BannerK50.TcPOU">
       <SubType>Code</SubType>
     </Compile>

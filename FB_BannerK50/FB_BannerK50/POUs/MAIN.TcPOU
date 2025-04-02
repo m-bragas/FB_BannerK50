@@ -3,14 +3,16 @@
   <POU Name="MAIN" Id="{1f5d730c-9e96-4a11-b15c-ef2848a86c90}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	fb_BannerK50		: FB_BannerK50;
+	fbBanner			: FB_BannerK50;
+	
+	Toggle				: BOOL := FALSE;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[FB_BannerK50();]]></ST>
+      <ST><![CDATA[fbBanner();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="5" Count="0" />
+      <LineId Id="55" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
