@@ -401,37 +401,37 @@ END_VAR
 			Banner_Indicator[0] := 0;               
 			Banner_Indicator[1] := 1;               
 			Banner_Indicator[2] := 0;               
-			Banner_Indicator[3] := 0;               
+			Banner_Indicator[3] := 3;               
 	                                             
 		ELSIF Color.YellowSolid_AudibleSolid THEN
 			Banner_Indicator[0] := 0;               
 		    Banner_Indicator[1] := 1;            
-		    Banner_Indicator[2] := 0;            
-		    Banner_Indicator[3] := 0;            
+		    Banner_Indicator[2] := 32;            
+		    Banner_Indicator[3] := 3;            
 		                                         
 		ELSIF Color.YellowSolid_AudiblePulse THEN
 			Banner_Indicator[0] := 0;	              
 		    Banner_Indicator[1] := 1;	           
-		    Banner_Indicator[2] := 0;	           
-		    Banner_Indicator[3] := 0;	           
+		    Banner_Indicator[2] := 64;	           
+		    Banner_Indicator[3] := 3;	           
 			                                        
 		ELSIF Color.Yellow_Flash THEN	           
 			Banner_Indicator[0] := 0;               
-		    Banner_Indicator[1] := 1;            
+		    Banner_Indicator[1] := 2;            
 		    Banner_Indicator[2] := 0;            
-		    Banner_Indicator[3] := 0;            
+		    Banner_Indicator[3] := 3;            
 		                                         
 		ELSIF Color.YellowFlash_AudibleSolid THEN
 			Banner_Indicator[0] := 0;               
-		    Banner_Indicator[1] := 1;            
-		    Banner_Indicator[2] := 0;            
-		    Banner_Indicator[3] := 0;            
+		    Banner_Indicator[1] := 2;            
+		    Banner_Indicator[2] := 32;            
+		    Banner_Indicator[3] := 3;            
 			                                        
 		ELSIF Color.YellowFlash_AudiblePulse THEN
 			Banner_Indicator[0] := 0;	              
-		    Banner_Indicator[1] := 1;	           
-		    Banner_Indicator[2] := 0;	           
-		    Banner_Indicator[3] := 0;	           
+		    Banner_Indicator[1] := 2;	           
+		    Banner_Indicator[2] := 64;	           
+		    Banner_Indicator[3] := 3;	           
 
 		//Lime Green Variations -------------------------------------------------------------
 			
@@ -439,37 +439,37 @@ END_VAR
 			Banner_Indicator[0] := 0;               	
 			Banner_Indicator[1] := 1;               	
 			Banner_Indicator[2] := 0;               	
-			Banner_Indicator[3] := 0;               	
+			Banner_Indicator[3] := 4;               	
 		                                         	
 		ELSIF Color.LimeGreenSolid_AudibleSolid THEN	
 			Banner_Indicator[0] := 0;               	
 		    Banner_Indicator[1] := 1;            	
-		    Banner_Indicator[2] := 0;            	
-		    Banner_Indicator[3] := 0;            	
+		    Banner_Indicator[2] := 32;            	
+		    Banner_Indicator[3] := 4;            	
 		                                         	
 		ELSIF Color.LimeGreenSolid_AudiblePulse THEN	
 			Banner_Indicator[0] := 0;	              	
 		    Banner_Indicator[1] := 1;	           	
-		    Banner_Indicator[2] := 0;	           	
-		    Banner_Indicator[3] := 0;	           	
+		    Banner_Indicator[2] := 64;	           	
+		    Banner_Indicator[3] := 4;	           	
 			                                        	
 		ELSIF Color.LimeGreen_Flash THEN	           	
 			Banner_Indicator[0] := 0;               	
-		    Banner_Indicator[1] := 1;            	
+		    Banner_Indicator[1] := 2;            	
 		    Banner_Indicator[2] := 0;            	
-		    Banner_Indicator[3] := 0;            	
+		    Banner_Indicator[3] := 4;            	
 		                                         	
 		ELSIF Color.LimeGreenFlash_AudibleSolid THEN	
 			Banner_Indicator[0] := 0;               	
-		    Banner_Indicator[1] := 1;            	
-		    Banner_Indicator[2] := 0;            	
-		    Banner_Indicator[3] := 0;            	
+		    Banner_Indicator[1] := 2;            	
+		    Banner_Indicator[2] := 32;            	
+		    Banner_Indicator[3] := 4;            	
 			                                        	
 		ELSIF Color.LimeGreenFlash_AudiblePulse THEN	
 			Banner_Indicator[0] := 0;	              	
-		    Banner_Indicator[1] := 1;	           	
-		    Banner_Indicator[2] := 0;	           	
-		    Banner_Indicator[3] := 0;	           	
+		    Banner_Indicator[1] := 2;	           	
+		    Banner_Indicator[2] := 64;	           	
+		    Banner_Indicator[3] := 4;	           	
 			
 		//Spring Green Variations -------------------------------------------------------------	
 			
@@ -477,37 +477,37 @@ END_VAR
 			Banner_Indicator[0] := 0;               	
 			Banner_Indicator[1] := 1;               	
 			Banner_Indicator[2] := 0;               	
-			Banner_Indicator[3] := 0;               	
+			Banner_Indicator[3] := 5;               	
 		                                         	
 		ELSIF Color.SpringGreenSolid_AudibleSolid THEN	
 			Banner_Indicator[0] := 0;               	
 		    Banner_Indicator[1] := 1;            	
-		    Banner_Indicator[2] := 0;            	
-		    Banner_Indicator[3] := 0;            	
+		    Banner_Indicator[2] := 32;            	
+		    Banner_Indicator[3] := 5;            	
 		                                         	
 		ELSIF Color.SpringGreenSolid_AudiblePulse THEN	
 			Banner_Indicator[0] := 0;	              	
 		    Banner_Indicator[1] := 1;	           	
-		    Banner_Indicator[2] := 0;	           	
-		    Banner_Indicator[3] := 0;	           	
+		    Banner_Indicator[2] := 64;	           	
+		    Banner_Indicator[3] := 5;	           	
 			                                        	
 		ELSIF Color.SpringGreen_Flash THEN	           	
 			Banner_Indicator[0] := 0;               	
-		    Banner_Indicator[1] := 1;            	
+		    Banner_Indicator[1] := 2;            	
 		    Banner_Indicator[2] := 0;            	
-		    Banner_Indicator[3] := 0;            	
+		    Banner_Indicator[3] := 5;            	
 		                                         	
 		ELSIF Color.SpringGreenFlash_AudibleSolid THEN	
 			Banner_Indicator[0] := 0;               	
-		    Banner_Indicator[1] := 1;            	
-		    Banner_Indicator[2] := 0;            	
-		    Banner_Indicator[3] := 0;            	
+		    Banner_Indicator[1] := 2;            	
+		    Banner_Indicator[2] := 32;            	
+		    Banner_Indicator[3] := 5;            	
 			                                        	
 		ELSIF Color.SpringGreenFlash_AudiblePulse THEN	
 			Banner_Indicator[0] := 0;	              	
-		    Banner_Indicator[1] := 1;	           	
-		    Banner_Indicator[2] := 0;	           	
-		    Banner_Indicator[3] := 0;	           	
+		    Banner_Indicator[1] := 2;	           	
+		    Banner_Indicator[2] := 64;	           	
+		    Banner_Indicator[3] := 5;	           	
 			
 		//Cyan Variations -------------------------------------------------------------
         
@@ -515,37 +515,37 @@ END_VAR
         	Banner_Indicator[0] := 0;               
         	Banner_Indicator[1] := 1;               
         	Banner_Indicator[2] := 0;               
-        	Banner_Indicator[3] := 0;               
+        	Banner_Indicator[3] := 6;               
                                                  
         ELSIF Color.CyanSolid_AudibleSolid THEN
         	Banner_Indicator[0] := 0;               
             Banner_Indicator[1] := 1;            
-            Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[2] := 32;            
+            Banner_Indicator[3] := 6;            
                                                  
         ELSIF Color.CyanSolid_AudiblePulse THEN
         	Banner_Indicator[0] := 0;	              
             Banner_Indicator[1] := 1;	           
-            Banner_Indicator[2] := 0;	           
-            Banner_Indicator[3] := 0;	           
+            Banner_Indicator[2] := 64;	           
+            Banner_Indicator[3] := 6;	           
         	                                        
         ELSIF Color.Cyan_Flash THEN	           
         	Banner_Indicator[0] := 0;               
-            Banner_Indicator[1] := 1;            
+            Banner_Indicator[1] := 2;            
             Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[3] := 6;            
                                                  
         ELSIF Color.CyanFlash_AudibleSolid THEN
         	Banner_Indicator[0] := 0;               
-            Banner_Indicator[1] := 1;            
-            Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[1] := 2;            
+            Banner_Indicator[2] := 32;            
+            Banner_Indicator[3] := 6;            
         	                                        
         ELSIF Color.CyanFlash_AudiblePulse THEN
         	Banner_Indicator[0] := 0;	              
-            Banner_Indicator[1] := 1;	           
-            Banner_Indicator[2] := 0;	           
-            Banner_Indicator[3] := 0;	           
+            Banner_Indicator[1] := 2;	           
+            Banner_Indicator[2] := 64;	           
+            Banner_Indicator[3] := 6;	           
 
 		//Sky Blue Variations -------------------------------------------------------------
         
@@ -553,37 +553,37 @@ END_VAR
         	Banner_Indicator[0] := 0;               
         	Banner_Indicator[1] := 1;               
         	Banner_Indicator[2] := 0;               
-        	Banner_Indicator[3] := 0;               
+        	Banner_Indicator[3] := 7;               
                                                  
         ELSIF Color.SkyBlueSolid_AudibleSolid THEN
         	Banner_Indicator[0] := 0;               
             Banner_Indicator[1] := 1;            
-            Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[2] := 32;            
+            Banner_Indicator[3] := 7;            
                                                  
         ELSIF Color.SkyBlueSolid_AudiblePulse THEN
         	Banner_Indicator[0] := 0;	              
             Banner_Indicator[1] := 1;	           
-            Banner_Indicator[2] := 0;	           
-            Banner_Indicator[3] := 0;	           
+            Banner_Indicator[2] := 64;	           
+            Banner_Indicator[3] := 7;	           
         	                                        
         ELSIF Color.SkyBlue_Flash THEN	           
         	Banner_Indicator[0] := 0;               
-            Banner_Indicator[1] := 1;            
+            Banner_Indicator[1] := 2;            
             Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[3] := 7;            
                                                  
         ELSIF Color.SkyBlueFlash_AudibleSolid THEN
         	Banner_Indicator[0] := 0;               
-            Banner_Indicator[1] := 1;            
-            Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[1] := 2;            
+            Banner_Indicator[2] := 32;            
+            Banner_Indicator[3] := 7;            
         	                                        
         ELSIF Color.SkyBlueFlash_AudiblePulse THEN
         	Banner_Indicator[0] := 0;	              
-            Banner_Indicator[1] := 1;	           
-            Banner_Indicator[2] := 0;	           
-            Banner_Indicator[3] := 0;	           
+            Banner_Indicator[1] := 2;	           
+            Banner_Indicator[2] := 64;	           
+            Banner_Indicator[3] := 7;	           
 
 		//Blue Variations -------------------------------------------------------------
         
@@ -591,37 +591,37 @@ END_VAR
         	Banner_Indicator[0] := 0;               
         	Banner_Indicator[1] := 1;               
         	Banner_Indicator[2] := 0;               
-        	Banner_Indicator[3] := 0;               
+        	Banner_Indicator[3] := 8;               
                                                  
         ELSIF Color.BlueSolid_AudibleSolid THEN
         	Banner_Indicator[0] := 0;               
             Banner_Indicator[1] := 1;            
-            Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[2] := 32;            
+            Banner_Indicator[3] := 8;            
                                                  
         ELSIF Color.BlueSolid_AudiblePulse THEN
         	Banner_Indicator[0] := 0;	              
             Banner_Indicator[1] := 1;	           
-            Banner_Indicator[2] := 0;	           
-            Banner_Indicator[3] := 0;	           
+            Banner_Indicator[2] := 64;	           
+            Banner_Indicator[3] := 8;	           
         	                                        
         ELSIF Color.Blue_Flash THEN	           
         	Banner_Indicator[0] := 0;               
-            Banner_Indicator[1] := 1;            
+            Banner_Indicator[1] := 2;            
             Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[3] := 8;            
                                                  
         ELSIF Color.BlueFlash_AudibleSolid THEN
         	Banner_Indicator[0] := 0;               
-            Banner_Indicator[1] := 1;            
-            Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[1] := 2;            
+            Banner_Indicator[2] := 32;            
+            Banner_Indicator[3] := 8;            
         	                                        
         ELSIF Color.BlueFlash_AudiblePulse THEN
         	Banner_Indicator[0] := 0;	              
-            Banner_Indicator[1] := 1;	           
-            Banner_Indicator[2] := 0;	           
-            Banner_Indicator[3] := 0;	           
+            Banner_Indicator[1] := 2;	           
+            Banner_Indicator[2] := 64;	           
+            Banner_Indicator[3] := 8;	           
 
 		//Violet Variations -------------------------------------------------------------
         
@@ -629,37 +629,37 @@ END_VAR
         	Banner_Indicator[0] := 0;               
         	Banner_Indicator[1] := 1;               
         	Banner_Indicator[2] := 0;               
-        	Banner_Indicator[3] := 0;               
+        	Banner_Indicator[3] := 9;               
                                                  
         ELSIF Color.VioletSolid_AudibleSolid THEN
         	Banner_Indicator[0] := 0;               
             Banner_Indicator[1] := 1;            
-            Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[2] := 32;            
+            Banner_Indicator[3] := 9;            
                                                  
         ELSIF Color.VioletSolid_AudiblePulse THEN
         	Banner_Indicator[0] := 0;	              
             Banner_Indicator[1] := 1;	           
-            Banner_Indicator[2] := 0;	           
-            Banner_Indicator[3] := 0;	           
+            Banner_Indicator[2] := 64;	           
+            Banner_Indicator[3] := 9;	           
         	                                        
         ELSIF Color.Violet_Flash THEN	           
         	Banner_Indicator[0] := 0;               
-            Banner_Indicator[1] := 1;            
+            Banner_Indicator[1] := 2;            
             Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[3] := 9;            
                                                  
         ELSIF Color.VioletFlash_AudibleSolid THEN
         	Banner_Indicator[0] := 0;               
-            Banner_Indicator[1] := 1;            
-            Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[1] := 2;            
+            Banner_Indicator[2] := 32;            
+            Banner_Indicator[3] := 9;            
         	                                        
         ELSIF Color.VioletFlash_AudiblePulse THEN
         	Banner_Indicator[0] := 0;	              
-            Banner_Indicator[1] := 1;	           
-            Banner_Indicator[2] := 0;	           
-            Banner_Indicator[3] := 0;	           
+            Banner_Indicator[1] := 2;	           
+            Banner_Indicator[2] := 64;	           
+            Banner_Indicator[3] := 9;	           
 
 		//Magenta Variations -------------------------------------------------------------
         
@@ -667,37 +667,37 @@ END_VAR
         	Banner_Indicator[0] := 0;               
         	Banner_Indicator[1] := 1;               
         	Banner_Indicator[2] := 0;               
-        	Banner_Indicator[3] := 0;               
+        	Banner_Indicator[3] := 10;               
                                                  
         ELSIF Color.MagentaSolid_AudibleSolid THEN
         	Banner_Indicator[0] := 0;               
             Banner_Indicator[1] := 1;            
-            Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[2] := 32;            
+            Banner_Indicator[3] := 10;            
 	                                             
 		ELSIF Color.MagentaSolid_AudiblePulse THEN	
 			Banner_Indicator[0] := 0;	              	
 		    Banner_Indicator[1] := 1;	           	
-		    Banner_Indicator[2] := 0;	           	
-		    Banner_Indicator[3] := 0;	           	
+		    Banner_Indicator[2] := 64;	           	
+		    Banner_Indicator[3] := 10;	           	
 			                                        	
 		ELSIF Color.Magenta_Flash THEN	           	
 			Banner_Indicator[0] := 0;               	
-		    Banner_Indicator[1] := 1;            	
+		    Banner_Indicator[1] := 2;            	
 		    Banner_Indicator[2] := 0;            	
-		    Banner_Indicator[3] := 0;            
+		    Banner_Indicator[3] := 10;            
                                                  
         ELSIF Color.MagentaFlash_AudibleSolid THEN
         	Banner_Indicator[0] := 0;               
-            Banner_Indicator[1] := 1;            
-            Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[1] := 2;            
+            Banner_Indicator[2] := 32;            
+            Banner_Indicator[3] := 10;            
         	                                        
         ELSIF Color.MagentaFlash_AudiblePulse THEN
         	Banner_Indicator[0] := 0;	              
-            Banner_Indicator[1] := 1;	           
-            Banner_Indicator[2] := 0;	           
-            Banner_Indicator[3] := 0;	           
+            Banner_Indicator[1] := 2;	           
+            Banner_Indicator[2] := 64;	           
+            Banner_Indicator[3] := 10;	           
 
 		//Rose Variations -------------------------------------------------------------
         
@@ -705,37 +705,37 @@ END_VAR
         	Banner_Indicator[0] := 0;               
         	Banner_Indicator[1] := 1;               
         	Banner_Indicator[2] := 0;               
-        	Banner_Indicator[3] := 0;               
+        	Banner_Indicator[3] := 11;               
                                                  
         ELSIF Color.RoseSolid_AudibleSolid THEN
         	Banner_Indicator[0] := 0;               
             Banner_Indicator[1] := 1;            
-            Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[2] := 32;            
+            Banner_Indicator[3] := 11;            
                                                  
         ELSIF Color.RoseSolid_AudiblePulse THEN
         	Banner_Indicator[0] := 0;	              
             Banner_Indicator[1] := 1;	           
-            Banner_Indicator[2] := 0;	           
-            Banner_Indicator[3] := 0;	           
+            Banner_Indicator[2] := 64;	           
+            Banner_Indicator[3] := 11;	           
         	                                        
         ELSIF Color.Rose_Flash THEN	           
         	Banner_Indicator[0] := 0;               
-            Banner_Indicator[1] := 1;            
+            Banner_Indicator[1] := 2;            
             Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[3] := 11;            
                                                  
         ELSIF Color.RoseFlash_AudibleSolid THEN
         	Banner_Indicator[0] := 0;               
-            Banner_Indicator[1] := 1;            
-            Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[1] := 2;            
+            Banner_Indicator[2] := 32;            
+            Banner_Indicator[3] := 11;            
         	                                        
         ELSIF Color.RoseFlash_AudiblePulse THEN
         	Banner_Indicator[0] := 0;	              
-            Banner_Indicator[1] := 1;	           
-            Banner_Indicator[2] := 0;	           
-            Banner_Indicator[3] := 0;	           
+            Banner_Indicator[1] := 2;	           
+            Banner_Indicator[2] := 64;	           
+            Banner_Indicator[3] := 11;	           
 
 		//White Variations -------------------------------------------------------------
         
@@ -743,37 +743,37 @@ END_VAR
         	Banner_Indicator[0] := 0;               
         	Banner_Indicator[1] := 1;               
         	Banner_Indicator[2] := 0;               
-        	Banner_Indicator[3] := 0;               
+        	Banner_Indicator[3] := 12;               
                                                  
         ELSIF Color.WhiteSolid_AudibleSolid THEN
         	Banner_Indicator[0] := 0;               
             Banner_Indicator[1] := 1;            
-            Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[2] := 32;            
+            Banner_Indicator[3] := 12;            
                                                  
         ELSIF Color.WhiteSolid_AudiblePulse THEN
         	Banner_Indicator[0] := 0;	              
             Banner_Indicator[1] := 1;	           
-            Banner_Indicator[2] := 0;	           
-            Banner_Indicator[3] := 0;	           
+            Banner_Indicator[2] := 64;	           
+            Banner_Indicator[3] := 12;	           
         	                                        
         ELSIF Color.White_Flash THEN	           
         	Banner_Indicator[0] := 0;               
-            Banner_Indicator[1] := 1;            
+            Banner_Indicator[1] := 2;            
             Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[3] := 12;            
                                                  
         ELSIF Color.WhiteFlash_AudibleSolid THEN
         	Banner_Indicator[0] := 0;               
-            Banner_Indicator[1] := 1;            
-            Banner_Indicator[2] := 0;            
-            Banner_Indicator[3] := 0;            
+            Banner_Indicator[1] := 2;            
+            Banner_Indicator[2] := 32;            
+            Banner_Indicator[3] := 12;            
         	                                        
         ELSIF Color.WhiteFlash_AudiblePulse THEN
         	Banner_Indicator[0] := 0;	              
-            Banner_Indicator[1] := 1;	           
-            Banner_Indicator[2] := 0;	           
-            Banner_Indicator[3] := 0;	           
+            Banner_Indicator[1] := 2;	           
+            Banner_Indicator[2] := 64;	           
+            Banner_Indicator[3] := 12;	           
 
 		//Demo Variations -------------------------------------------------------------
         
