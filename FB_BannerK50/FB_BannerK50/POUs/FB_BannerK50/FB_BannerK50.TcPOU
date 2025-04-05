@@ -2,32 +2,26 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
   <POU Name="FB_BannerK50" Id="{c8a7360f-87fb-4601-8c93-a54afc321e01}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_BannerK50
-VAR_INPUT
-																										//		https://www.bannerengineering.com/us/en/products/part.802164.html  >>>>------ IO Link Data Reference Guide >>> Found Here
+VAR_INPUT																									//		https://www.bannerengineering.com/us/en/products/part.802164.html  >>>>------ IO Link Data Reference Guide >>> Found Here
 	AutoMode						:	BOOL := FALSE;
-	ManualMode						:	BOOL := FALSE;				// To use Manual Mode, just call the FB 
-	
 	SetAllFalse						:	BOOL := FALSE;
 	
 	// Structures
 	Color							:	ST_Colors_Auto;
 	Data							:	ST_ProcessData_Manual;
 	Value							:   ST_ProcessValues;	
-
 END_VAR
+
 VAR_OUTPUT
-	
 	// IO
 	Banner_Indicator 		AT %Q*  : 	ARRAY[0..3] OF USINT;
-	
-END_VAR
-VAR
 END_VAR
 
+VAR
+	ManualMode						:	BOOL := FALSE;				// To use Manual Mode, just call the FB
+END_VAR
 
 (*
-
-
 
 Subindex 			     Name						Number of Bits 											Data Values
 
@@ -71,58 +65,7 @@ Subindex 			     Name						Number of Bits 											Data Values
 		    |                                    |                |
 ------------|------------------------------------|----------------|--------------------------------------------------------------------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-*)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-]]></Declaration>
+*)]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF AutoMode THEN
 	_M_SetColorAuto();
@@ -265,7 +208,7 @@ END_VAR
 			Banner_Indicator[2] := 0;
 			Banner_Indicator[3] := 0;
 		
-		 ELSIF Color.GreenSolid_AudibleSolid THEN
+		ELSIF Color.GreenSolid_AudibleSolid THEN
 			Banner_Indicator[0] := 0;
 		    Banner_Indicator[1] := 1;
 		    Banner_Indicator[2] := 32;
@@ -763,7 +706,7 @@ END_VAR
                                          
 		ELSIF Color.OFF THEN           
 			Banner_Indicator[0] := 0;   	
-			Banner_Indicator[1] := 1;   	
+			Banner_Indicator[1] := 0;   	
 			Banner_Indicator[2] := 0;   	
 			Banner_Indicator[3] := 0;   	
 	ELSE
@@ -790,6 +733,40 @@ END_VAR
 END_IF]]></ST>
       </Implementation>
     </Method>
+    <Property Name="P_Auto" Id="{429424c6-434a-4b5d-8107-3898110dcb62}">
+      <Declaration><![CDATA[{reion "Property"}
+PROPERTY P_Auto : REFERENCE TO ST_Colors_Auto;]]></Declaration>
+      <Get Name="Get" Id="{b1de3b82-6dbb-4b65-b313-6c54b89d340e}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[P_Auto REF= Color ;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="P_Manual" Id="{ec7e6411-5751-417a-bf2d-6eb6930796ae}">
+      <Declaration><![CDATA[PROPERTY P_Manual : REFERENCE TO ST_ProcessData_Manual;]]></Declaration>
+      <Get Name="Get" Id="{8816a393-d838-486b-b045-53d84e8d35ac}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[P_Manual REF= Data;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="P_Values" Id="{893d3ac6-074b-4cc2-bc76-d7352020aae2}">
+      <Declaration><![CDATA[PROPERTY P_Values : REFERENCE TO ST_ProcessValues;]]></Declaration>
+      <Get Name="Get" Id="{7ee96989-92fa-4bac-9244-b7ef458a0f0b}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[P_Values REF= Value;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
     <LineIds Name="FB_BannerK50">
       <LineId Id="9" Count="0" />
       <LineId Id="70" Count="0" />
@@ -842,6 +819,15 @@ END_IF]]></ST>
     <LineIds Name="FB_BannerK50._M_SetColorManual">
       <LineId Id="9" Count="4" />
       <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BannerK50.P_Auto.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BannerK50.P_Manual.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BannerK50.P_Values.Get">
+      <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

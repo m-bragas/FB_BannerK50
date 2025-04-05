@@ -4,8 +4,6 @@
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
 	fbBanner			: FB_BannerK50;
-	
-	Toggle				: BOOL := FALSE;
 END_VAR
 ]]></Declaration>
     <Implementation>

@@ -15,29 +15,54 @@
     <Implicit_KindOfTask>{a8fad6a1-cd58-4494-a9c9-e9e9d5d7dd26}</Implicit_KindOfTask>
     <Implicit_Jitter_Distribution>{d7af8405-3d82-43a8-8099-dd40973c53d3}</Implicit_Jitter_Distribution>
     <LibraryReferences>{e3f0788a-76e3-4f8e-b7c1-d1a6dc100484}</LibraryReferences>
+    <Released>false</Released>
+    <Title>FB_BannerK50</Title>
+    <ProjectVersion>4.4.2025.01</ProjectVersion>
+    <Author>mbragas</Author>
+    <Description>Banner Engineering K50RGB IO Link</Description>
+    <PreserveCompiledLibComments>true</PreserveCompiledLibComments>
+    <Company>MBPersonalDev</Company>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\DUTs\ST_Colors_Auto.TcDUT">
+    <Compile Include="POUs\FB_BannerK50\DUTs\ST_Colors_Auto.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\DUTs\ST_ProcessData_Manual.TcDUT">
+    <Compile Include="POUs\FB_BannerK50\DUTs\ST_ProcessData_Manual.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\DUTs\ST_ProcessValues.TcDUT">
+    <Compile Include="POUs\FB_BannerK50\DUTs\ST_ProcessValues.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_BannerK50.TcPOU">
+    <Compile Include="POUs\FB_BannerK50\FB_BannerK50.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Project Information\F_GetCompany.TcPOU">
+      <SubType>Code</SubType>
+      <SystemCall>true</SystemCall>
+    </Compile>
+    <Compile Include="Project Information\F_GetTitle.TcPOU">
+      <SubType>Code</SubType>
+      <SystemCall>true</SystemCall>
+    </Compile>
+    <Compile Include="Project Information\F_GetVersion.TcPOU">
+      <SubType>Code</SubType>
+      <SystemCall>true</SystemCall>
+    </Compile>
+    <Compile Include="Version\Global_Version.TcGVL">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="POUs\DUTs" />
+    <Folder Include="POUs\FB_BannerK50" />
+    <Folder Include="POUs\FB_BannerK50\DUTs" />
+    <Folder Include="Project Information" />
+    <Folder Include="Version" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
